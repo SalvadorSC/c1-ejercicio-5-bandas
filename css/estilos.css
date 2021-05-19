@@ -5,62 +5,66 @@
 
 body {
   margin: 0;
+  height: 100vh;
 }
 
 * {
   box-sizing: border-box;
 }
 
-/*
-  ##Device = Desktops
-  ##Screen = 1281px to higher resolution desktops
-*/
-
-@media (min-width: 1281px) {
-  /* CSS */
+.principal {
+  display: flex;
+  justify-content: space-evenly;
+  height: 100%;
 }
 
-/*
-  ##Device = Laptops, Desktops
-  ##Screen = B/w 1025px to 1280px
-*/
-
-@media (min-width: 1025px) and (max-width: 1280px) {
-  /* CSS */
+div {
+  background-color: azure;
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.5s;
 }
 
-/*
-  ##Device = Tablets, Ipads (portrait)
-  ##Screen = B/w 768px to 1024px
-*/
-
-@media (min-width: 768px) and (max-width: 1024px) {
-  /* CSS */
+div:hover {
+  background-color: #000;
+  color: #fff;
 }
 
-/*
-  ##Device = Tablets, Ipads (landscape)
-  ##Screen = B/w 768px to 1024px
-*/
-
-@media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
-  /* CSS */
+div>p {
+  transition: 1s;
 }
 
-/*
-  ##Device = Low Resolution Tablets, Mobiles (Landscape)
-  ##Screen = B/w 481px to 767px
-*/
-
-@media (min-width: 481px) and (max-width: 767px) {
-  /* CSS */
+div:hover>p {
+  transform: rotate(180deg);
 }
 
-/*
-  ##Device = Most of the Smartphones Mobiles (Portrait)
-  ##Screen = B/w 320px to 479px
-*/
+div:nth-child(1) {
+  background-color: #00ffff;
+}
 
-@media (min-width: 320px) and (max-width: 480px) {
-  /* CSS */
+.banda:hover {
+  background-color: #000;
+}
+
+div:nth-child(2) {
+  background-color: #00dedd;
+}
+
+div:nth-child(3) {
+  background-color: #00bbbc;
+}
+
+div:nth-child(4) {
+  background-color: #009999;
+}
+
+div:nth-child(5) {
+  background-color: #007776;
+}
+
+div:hover+div {
+  background-color: #fff;
+  color: #000
 }
