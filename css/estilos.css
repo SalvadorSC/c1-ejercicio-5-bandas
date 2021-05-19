@@ -13,22 +13,37 @@ body {
 
 .principal {
   display: flex;
-  justify-content: space-evenly;
-  height: 100%;
+  height: 100vh;
+  width: 100vw;
+  position: absolute;
+  z-index: 2;
+  background-image: url("https://cdn.designsmaz.com/wp-content/uploads/2016/03/Cat-with-Sunglasses-Background.jpg");
 }
 
 .banda {
-  background-color: azure;
   flex: 1;
   display: flex;
   align-items: center;
   justify-content: center;
+  height: 100vh;
   transition: background-color 0.5s;
+  transition: height 5s;
 }
 
-.banda:hover {
-  background-color: #000;
+.fondo {
+  width: 100vw;
+  position: absolute;
+  z-index: 1;
+}
+
+.pantalla:hover>.banda {
   color: #fff;
+  background-color: #000;
+  height: 0;
+}
+
+.pantalla:hover>.banda p {
+  color: rgba(255, 255, 255, 0)
 }
 
 .banda>p {
@@ -39,31 +54,42 @@ body {
   transform: rotate(180deg);
 }
 
-.banda:hover {
-  background-color: #000;
-}
-
-div:nth-child(1) {
+.pantalla:nth-child(1) div {
   background-color: #00ffff;
 }
 
-div:nth-child(2) {
+.pantalla:nth-child(2) div {
   background-color: #00dedd;
 }
 
-div:nth-child(3) {
+.pantalla:nth-child(3) div {
   background-color: #00bbbc;
 }
 
-div:nth-child(4) {
+.pantalla:nth-child(4) div {
   background-color: #009999;
 }
 
-div:nth-child(5) {
+.pantalla:nth-child(5) div {
   background-color: #007776;
 }
 
-.banda:hover+div {
+.pantalla div {
+  transition: 0.5s;
+}
+
+.pantalla:hover+.pantalla div {
   background-color: #fff;
-  color: #000
+  color: #000;
+}
+
+.pantalla:hover>.pantalla:first-child {
+  height: 0;
+}
+
+.pantalla {
+  display: flex;
+  flex: 1;
+  align-items: center;
+  justify-content: center;
 }
